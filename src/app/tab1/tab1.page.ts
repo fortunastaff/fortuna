@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RankService } from '../services/rank.service';
 
 
 @Component({
@@ -8,16 +9,22 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  ranking: any []; 
   
-    ranking: any [] = [];
 
-  constructor ( private http: HttpClient ){
+  constructor ( private rank: RankService ){
   console.log ('constructor log ');
-  this.http.get('https://pinkbean.xyz/api/rank/eu/xpanquesin/overall/')
-    .subscribe( (resp: any) => {
-      this.ranking = resp;
-      console.log (resp);
-     })
   
+
+  
+ 
+}
+search(termino: string){
+  console.log(termino)
+  this.rank.getNewRank(termino)
+    .subscribe((data : any)=>{
+      console.log(data);
+      this.ranking = data;
+    });
 }
 }

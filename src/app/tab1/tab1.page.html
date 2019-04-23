@@ -7,6 +7,10 @@
 </ion-header>
 
 <ion-content>
+      
+                <video autoplay loop src="assets/video/loop.mp4"></video>
+           
+
     <div class="row"></div>
     <ion-searchbar animated #termino (keyup)="search(termino.value)" class="form-control" placeholder="Buscar Ranking ..." ></ion-searchbar>
     <div *ngIf="termino.value">

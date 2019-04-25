@@ -1,0 +1,44 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-title>
+            Ranking
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <!-- <video autoplay loop src="assets/video/loop.mp4"></video> -->
+
+
+    <div class="row animated fadeIn fast"></div>
+    <ion-searchbar animated #termino (keyup)="search(termino.value)" class="form-control" placeholder="Buscar Ranking ..."></ion-searchbar>
+    <div *ngIf="termino.value">
+        <ion-item class="item ios in-list ion-focusable item-label hydrated">
+            <ion-avatar slot="start" class="ios hydrated">
+                <img class="imagen" [src]=ranking.avatar>
+            </ion-avatar>
+            <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated">
+                <h2>{{ranking.name}}</h2>
+                <h3>{{ranking.job}}</h3>
+                <p>lvl {{ranking.level}}</p>
+                <p>Ranking {{ranking.ranking}}</p>
+                <p>Exp {{ranking.exp}}</p>
+                <p>Legion {{ranking.legion}}</p>
+            </ion-label>
+        </ion-item>
+
+    </div>
+    <div class="col-md-12 text-right">
+        <ion-button [routerLink]="['/rank','nuevo']"> Boton</ion-button>
+
+    </div>
+
+
+
+
+
+
+    <!-- <ion-button (click)="openDetailsInTab()"> Open Details with tab bar</ion-button>
+    <ion-button routerLink="/details"> Open Details without tab bar </ion-button> -->
+</ion-content>

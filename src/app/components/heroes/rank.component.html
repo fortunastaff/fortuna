@@ -1,0 +1,38 @@
+<h3> IGN <small> nombre...</small>
+    <ion-button [routerLink]="['/']"> Regresar</ion-button>
+</h3>
+<hr>
+<div class="row animated fadeIn fast">
+    <div class="col-md-12 text-right">
+        <form (ngSubmit)="guardar()" #forma="ngForm">
+
+            <div class="form-group ">
+                <label>nombre</label>
+                <input [(ngModel)]="rank.nombre " type="text " name=" " class="form-control " placeholder="Nombre del héroe " required>
+            </div>
+
+            <div class="form-group ">
+                <label> Casa</label>
+                <select [(ngModel)]="rank.guild " name="guild " class="form-control ">
+                    <option value="Fortuna ">Fortuna</option>
+                    <option value="Royal ">Royal</option>
+                 </select>
+            </div>
+
+            <div class="form-group ">
+                <label>Bio</label>
+                <textarea [(ngModel)]="rank.bio " name="bio " type="text " class="form-control " placeholder="Bio " required>
+                </textarea>
+            </div>
+
+            <div class="form-group ">
+                <button [disabled]="!forma.valid " type="submit " class="btn btn-outline-primary ">
+                Guardar cambios
+                </button>
+            </div>
+        </form>
+        <ion-button [routerLink]="[ '/rank', 'nuevo'] " type="button " name="button "> Nuevo heroe
+
+        </ion-button>
+    </div>
+</div>

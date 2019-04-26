@@ -9,30 +9,10 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
-    component: TabsPage,
-    children: [
-      {
-        path: 'tab1',
-        loadChildren: '../tab1/tab1.module#Tab1PageModule'
-      },
-      {
-        path: 'tab2',
-        loadChildren: '../tab1/tab1.module#Tab1PageModule'
-      },
-      {
-        path: 'tab1/details',
-        loadChildren: '../details/details.module#DetailsPageModule'
-      },
-    ]
-  },
-  {
-    path:'',
-    redirectTo: '',
-    pathMatch: 'full'
+    path: '',
+    component: TabsPage
   }
-  ];
-  
+];
 
 @NgModule({
   imports: [
@@ -41,9 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [TabsPage,],
-  exports:[
-    TabsPage
-  ]
+  declarations: [TabsPage]
 })
 export class TabsPageModule {}

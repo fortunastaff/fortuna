@@ -11,14 +11,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RankService } from './services/rank.service';
-
-import { HeroesComponent } from './components/heroes/heroes.component';
 import { RankComponent } from './components/heroes/rank.component';
 
 import { FormsModule } from '@angular/forms';
 
 import {APP_ROUTING} from "./app.routes";
+import { HeroesComponent } from './components/heroes/heroes.component';
+import { RankService } from './services/rank.service';
 
 
 @NgModule({
